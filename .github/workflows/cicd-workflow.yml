@@ -49,5 +49,5 @@ jobs:
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: nodejs-app-service
-          cluster: DevCluster
+          cluster: shermin-bits
           wait-for-service-stability: true    
