@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:390444226903:task-definition/nodejs-app-task-definition:1",
+    "taskDefinitionArn": "arn:aws:ecs:eu-north-1:390444226903:task-definition/nodejs-app-task-definition:4",
     "containerDefinitions": [
         {
             "name": "nodejs-app",
-            "image": "public.ecr.aws/y3o0k8p2/shermin10598",
+            "image": "390444226903.dkr.ecr.eu-north-1.amazonaws.com/nodejs-app:e9c79ab98b35ee92fd658c0111f21285564686ad",
             "cpu": 0,
             "portMappings": [
                 {
@@ -16,10 +16,8 @@
             ],
             "essential": true,
             "environment": [],
-            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
-            "ulimits": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
@@ -27,8 +25,7 @@
                     "awslogs-group": "/ecs/nodejs-app-task-definition",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
-                },
-                "secretOptions": []
+                }
             }
         }
     ],
@@ -36,7 +33,7 @@
     "taskRoleArn": "arn:aws:iam::390444226903:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::390444226903:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 1,
+    "revision": 4,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -47,10 +44,16 @@
             "name": "ecs.capability.execution-role-awslogs"
         },
         {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
         },
         {
             "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
@@ -76,7 +79,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-11-06T03:08:29.820Z",
+    "registeredAt": "2023-11-07T03:57:58.535Z",
     "registeredBy": "arn:aws:iam::390444226903:user/shermin-bits",
     "tags": []
 }
